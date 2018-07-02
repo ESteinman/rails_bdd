@@ -1,4 +1,4 @@
-When("I visit the site") do
+Given('I visit the "landing" page') do
     visit root_path
   end
   
@@ -10,4 +10,4 @@ When("I visit the site") do
     table.hashes.each do |article|
       Article.create!(article)
     end
-  end
+end
