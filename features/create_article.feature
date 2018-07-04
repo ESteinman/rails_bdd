@@ -13,7 +13,7 @@ Feature: Create articles
         And I click "Create Article" button
         Then I should be on "Learning Rails 5" page
         And I should see "Article was successfully created".
-        #The above test is not visible when clicking Create Article, and is not covered anywhere in the official Ruby Guide.
+        # The test above not covered in the Rails Guide.
         And I should see "Learning Rails 5"
         And I should see "Excited about learning a new framework"
 

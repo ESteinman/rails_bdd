@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-
+    flash[:notice] = "Article was successfully created"
     if @article.save
     else
       render 'new'

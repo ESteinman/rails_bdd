@@ -22,4 +22,7 @@ Given('I visit the "landing" page') do
     expect(page).to have_content expected_content
   end
   
+  And("I should see {string} message") do |content|
+    expect(page).to have_content content
+  end
   
