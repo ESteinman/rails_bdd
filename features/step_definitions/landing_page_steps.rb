@@ -10,24 +10,16 @@ Given('I visit the "landing" page') do
     fill_in field, with: content
  end
   
-  When("I click {string} button") do |string|
-    click_button(string)
+  When("I click {string} button") do |submit|
+    click_button('Create Article')
     end
   
   Then("I should be on {string} page") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    visit articles_new_path
   end
-  
-  Then("I should see {string}.") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Then("I should see {string}") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
-  end
-  
-  Then("I shlould see {string}") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+
+  And("I should see {string}.") do |expected_content|
+    expect(page).to have_content expected_content
   end
   
   
