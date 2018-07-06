@@ -17,4 +17,5 @@ Feature: Create articles
         And I click on "Create Article"
         And I fill in "Title" with ""
         And I fill in "Content" with "Excited about learning a new framework"
+        And I click on "Create Article"
         And I should see "Your Article could not be saved".
