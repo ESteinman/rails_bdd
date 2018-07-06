@@ -3,9 +3,7 @@
 
 <%= form_with model: @article, local: true do |form| %>
     
-  <% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-  <% end %>  
+
 
     <% if @article.errors.any? %>
       <div id="error_explanation">
@@ -34,6 +32,10 @@
    
     <p>
       <%= form.submit url: 'new_articles_path'%>
+
+      <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+      <% end %>  
     </p>
 <% end %>
 

@@ -8,4 +8,13 @@
     <%= @article.text %>
 </p>
 
+<h2>Add a comment:</h2>
+<%= form_with(model: [ @artiocle, @article.comments.build ],
+local: true |form| %>
+<p>
+    <%form with :commenter %><br>
+    <% form.text_field :commenter %>
+</p>
+<p>
+
 <%= link_to 'Back', articles_path %>

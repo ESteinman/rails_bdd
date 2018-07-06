@@ -16,6 +16,7 @@ Feature: Create articles
         # The test above not covered in the Rails Guide.
         And I should see "Learning Rails 5"
         And I should see "Excited about learning a new framework"
+        And I should see comments
 
         Scenario: Publisher doesn't enter a title for the article [Sad Path]
             When I fill in "Content" with "Excited about learning a new framework"
