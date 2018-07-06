@@ -4,22 +4,19 @@ Feature: Create articles
     I would like to be able to create articles
 
     Background: 
-    Given I visit the "landing" page
-    When I click "New Article" link
 
     Scenario: Successfully create an article [Happy Path]
-        When I fill in "Title" with "Learning Rails 5"
+        Given I visit the page
+        And I click on "Create Article"
+        And I fill in "Title" with "Learning Rails 5"
         And  I fill in "Content" with "Excited about learning a new framework"
-        And I click "Create Article" button
-        Then I should be on "Learning Rails 5" page
-        And I should see "Article was successfully created".
-        # The test above not covered in the Rails Guide.
-        And I should see "Learning Rails 5"
-        And I should see "Excited about learning a new framework"
-        And I should see comments
+        And I click on "Create Article"
+        Then there should be a new article in the database
+        And I should see "Your article has been created".    
 
         Scenario: Publisher doesn't enter a title for the article [Sad Path]
-            When I fill in "Content" with "Excited about learning a new framework"
-            And I click "Create Article" button
-            Then I should see "Title can't be blank"
-            And I shlould see "Article was not created"
+            Given I visit the page
+            And I click on "Create Article"
+            And I fill in "Title" with ""
+            And I fill in "Content" with "Excited about learning a new framework"
+            And I should see "Article was not created"

@@ -12,11 +12,11 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
-    flash[:notice] = "Article was successfully created"
-    if @article.save
+    @article = Article.create(article_params)
+    if @article.persisted?
+      redirect_to root_path, notice: 'Your article has been created'
     else
-      render :new
+      flash[:error] = "Your article could not be saved"
     end
   end
 
