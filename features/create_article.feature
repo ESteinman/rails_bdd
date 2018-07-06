@@ -3,8 +3,6 @@ Feature: Create articles
     In order to add relevant content to my news service
     I would like to be able to create articles
 
-    Background: 
-
     Scenario: Successfully create an article [Happy Path]
         Given I visit the page
         And I click on "Create Article"
@@ -14,9 +12,9 @@ Feature: Create articles
         Then there should be a new article in the database
         And I should see "Your article has been created".    
 
-        Scenario: Publisher doesn't enter a title for the article [Sad Path]
-            Given I visit the page
-            And I click on "Create Article"
-            And I fill in "Title" with ""
-            And I fill in "Content" with "Excited about learning a new framework"
-            And I should see "Article was not created"
+    Scenario: Publisher doesn't enter a title for the article [Sad Path]
+        Given I visit the page
+        And I click on "Create Article"
+        And I fill in "Title" with ""
+        And I fill in "Content" with "Excited about learning a new framework"
+        And I should see "Your Article could not be saved".

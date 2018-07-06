@@ -17,6 +17,7 @@ class ArticlesController < ApplicationController
       redirect_to root_path, notice: 'Your article has been created'
     else
       flash[:error] = "Your article could not be saved"
+      render :new
     end
   end
 
@@ -26,5 +27,3 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :content)
   end
 end
-
-#redirect_to_root_path, notice: 'Article was successfully created'
