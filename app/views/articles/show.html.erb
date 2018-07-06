@@ -1,20 +1,28 @@
-<p>
-    <strong>Title:</strong>
-    <%= @article.title %>
-</p>
+    <p>
+        <strong>Title:</strong>
+        <%= @article.title %>
+    </p>
 
-<p>
-    <strong>Text:</strong>
-    <%= @article.text %>
-</p>
+    <p>
+        <strong>Text:</strong>
+        <%= @article.text %>
+    </p>
 
-<h2>Add a comment:</h2>
-<%= form_with(model: [ @artiocle, @article.comments.build ],
-local: true |form| %>
-<p>
-    <%form with :commenter %><br>
-    <% form.text_field :commenter %>
-</p>
-<p>
+    <h2>Add a comment:</h2>
+    <%= form_with(model: [ @artiocle, @article.comments.build ],
+    local: true) do |form| %>
+        <p>
+            <%form with :commenter %><br>
+            <% form.text_field :commenter %>
+        </p>
+        <p>
+            <%= form.label :body %><br>
+            <%= form.text_area :body %>
+        </p>
+        <p>
+            <%= form.sumbit %>
+        </p>
+    <% end %>
 
+<%= link_to 'Edit', edit_article_path(@article) %>
 <%= link_to 'Back', articles_path %>
