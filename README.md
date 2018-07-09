@@ -1,24 +1,22 @@
-# README
+# Rails-Demo 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Deployed site:
+https://esteinman.github.io/rails_bdd
 
-Things you may want to cover:
+## List of content
 
-* Ruby version
+Instructions
+Programs used
 
-* System dependencies
+## Instructions
+This is a AUT-testing feature for a news-site with articles. You can show each article indivdiually and add comments to the articles.
 
-* Configuration
 
-* Database creation
+## Programs used
+Ruby on Rails
+Cucumber
+Rspec
+Rake
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+First release version

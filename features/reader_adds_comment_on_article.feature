@@ -13,6 +13,7 @@ Feature: User can comment on a article
         And I click on 'Learning Rails 5'
         When I fill in 'Email' with 'random@test.com'
         And I fill in 'Comment' with 'Good for you, wish you some happy coding!'
+        Then show me the page
         And I click on 'Add comment'
         Then I should be on 'Learning rails 5' page
         And I should see 'Your comment was successfully added'
